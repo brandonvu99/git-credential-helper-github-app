@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-APP_ID_FILE="$(pwd)/app_id"
-INSTALLATION_ID_FILE="$(pwd)/installation_id"
-KEY_FILE="$(pwd)/github-app.private-key.pem"
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+
+APP_ID_FILE="$SCRIPT_DIR/app_id"
+INSTALLATION_ID_FILE="$SCRIPT_DIR/installation_id"
+KEY_FILE="$SCRIPT_DIR/github-app.private-key.pem"
 
 APP_ID="$(<"$APP_ID_FILE")"
 INSTALLATION_ID="$(<"$INSTALLATION_ID_FILE")"
